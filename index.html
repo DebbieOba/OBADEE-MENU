@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="OBADEE EATS - Authentic Nigerian cuisine, starters, main dishes, desserts, and local beverages." />
+  <title>OBADEE EATS | Menu Board</title>
+  <link rel="icon" type="image/png" href="./images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header" id="header">
+    <a href="#" class="logo-wrapper">
+      <img src="./images/logo.png" alt="OBADEE EATS Logo" class="logo-img" />
+      <div class="logo">OBADEE <span>EATS</span></div>
+    </a>
+
+    <nav class="navbar" id="navbar" aria-label="Main Navigation">
+      <ul>
+        <li><a href="#starters" class="nav-link">Starters</a></li>
+        <li><a href="#main" class="nav-link">Main Dishes</a></li>
+        <li><a href="#desserts" class="nav-link">Desserts</a></li>
+        <li><a href="#beverages" class="nav-link">Beverages</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="cart-toggle" id="cartToggle" aria-label="View your order">
+        <span class="cart-icon" aria-hidden="true">🛒</span>
+        <span class="cart-label">Your Order</span>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navbar">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-badge">🔥 Freshly Prepared Daily • Open 9:00 AM – 10:00 PM</span>
+      <h1>Authentic Nigerian Flavors, <span>Crafted with Passion</span></h1>
+      <p>Experience rich traditional recipes, smoky party jollof, sizzling suya, and refreshing local beverages made from the finest ingredients.</p>
+      <div class="hero-buttons">
+        <a href="#menuControls" class="btn btn-primary">Explore Menu</a>
+        <a href="#main" class="btn btn-outline">Signature Mains</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH & FILTER CONTROLS -->
+  <section class="menu-controls" id="menuControls" aria-label="Filter and search menu">
+    <div class="controls-container">
+      <div class="search-box">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <input type="search" id="searchInput" placeholder="Search dishes (e.g., Jollof, Suya, Zobo)..." aria-label="Search dishes" />
+      </div>
+      <div class="filter-pills" role="group" aria-label="Dietary and feature filters">
+        <button class="filter-btn active" data-filter="all">All Dishes</button>
+        <button class="filter-btn" data-filter="popular">⭐ Popular</button>
+        <button class="filter-btn" data-filter="spicy">🌶️ Spicy</button>
+        <button class="filter-btn" data-filter="vegan">🌱 Plant-Based</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <main class="menu-board" id="menuBoard">
+    <div class="no-results" id="noResults" hidden>
+      <h3>No dishes match your search</h3>
+      <p>Try clearing your search or selecting "All Dishes".</p>
+      <button class="btn btn-outline" id="resetFiltersBtn">Reset Filters</button>
+    </div>
+
+    <!-- STARTERS -->
+    <section id="starters" class="menu-section fade-section">
+      <h2>Starters</h2>
+      <div class="menu-grid">
+        <article class="menu-card" data-tags="spicy popular" data-name="Pepper Soup" data-price="2500">
+          <div class="card-img-wrapper">
+            <img src="./images/Nigerian Pepper Soup.jpeg" alt="Pepper Soup" loading="lazy" />
+            <div class="card-badges">
+              <span class="badge badge-popular">⭐ Popular</span>
+              <span class="badge badge-spicy">🌶️ Spicy</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Pepper Soup</h3>
+            <p>Spicy goat meat broth simmered with aromatic local spices and scent leaves</p>
+            <div class="card-footer">
+              <span class="price">₦2,500</span>
+              <button class="add-to-cart-btn" type="button">+ Add to Order</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card" data-tags="popular" data-name="Moi Moi" data-price="1800">
+          <div class="card-img-wrapper">
+            <img src="./images/Moin moin.jpeg" alt="Moi Moi" loading="lazy" />
+            <div class="card-badges">
+              <span class="badge badge-popular">⭐ Popular</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Moi Moi</h3>
+            <p>Savory steamed honey-bean pudding served with boiled egg and fish flakes</p>
+            <div class="card-footer">
+              <span class="price">₦1,800</span>
+              <button class="add-to-cart-btn" type="button">+ Add to Order</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card" data-tags="vegan popular" data-name="Puff Puff" data-price="1200">
+          <div class="card-img-wrapper">
+            <img src="./images/Nigerian Puff Puff.jpeg" alt="Puff Puff" loading="lazy" />
+            <div class="card-badges">
+              <span class="badge badge-vegan">🌱 Plant-Based</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Puff Puff</h3>
+            <p>Warm, golden-brown sweet fried dough balls with a hint of nutmeg</p>
+            <div class="card-footer">
+              <span class="price">₦1,200</span>
+              <button class="add-to-cart-btn" type="button">+ Add to Order</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card" data-tags="spicy popular" data-name="Beef Suya Skewers" data-price="2800">
+          <div class="card-img-wrapper">
+            <img src="./images/Suya.jpeg" alt="Beef Suya Skewers" loading="lazy" />
+            <div class="card-badges">
+              <span class="badge badge-popular">⭐ Popular</span>
+              <span class="badge badge-spicy">🌶️ Spicy</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Beef Suya Skewers</h3>
+            <p>Char-grilled spiced peanut beef skewers garnished with fresh onions and cabbage</p>
+            <div class="card-footer">
+              <span class="price">₦2,800</span>
+              <button class="add-to-cart-btn" type="button">+ Add to Order</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card" data-tags="spicy popular" data-name="Gizdodo" data-price="2600">
+          <div class="card-img-wrapper">
+            <img src="./images/Gizzdodo.jpg" alt="Gizdodo" loading="lazy" />
+            <div class="card-badges">
+              <span class="badge badge-popular">⭐ Popular</span>
+              <span class="badge badge-spicy">🌶️ Spicy</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Gizdodo</h3>
+            <p>Tender fried chicken gizzards and sweet ripe plantain cubes tossed in a rich, spicy bell pepper sauce</p>
+            <div class="card-footer">
+              <span class="price">₦2,600</span>
+              <button class="add-to-cart-btn" type="button">+ Add to Order</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card" data-tags="vegan popular" data-name="Akara & Pap" data-price="1500">
+          <div class="card-img-wrapper">
+            <img src="./images/Akara and Pap.jpg" alt="Akara & Pap" loading="lazy" />
+            <div class="card-badges">
+              <span class="badge badge-popular">⭐ Popular</span>
+              <span class="badge badge-vegan">🌱 Plant-Based</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Akara & Pap</h3>
+            <p>Crispy golden black-eyed pea fritters served warm alongside smooth, creamy fermented corn pudding</p>
+            <div class="card-footer">
+              <span class="price">₦1,500</span>
+              <button class="add-to-cart-btn" type="button">+ Add to Order</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- MAIN DISHES -->
+    <section id="main" class="menu-section fade-section">
+      <h2>Main Dishes</h2>
+      <div class="menu-grid">
+        <article class="menu-card" data-tags="popular spicy" data-name="Jollof Rice & Grilled Chicken" data-price="3800">
+          <div class="card-img-wrapper">
+            <img src="./images/NIGERIAN JOLLOF RICE.jpeg" alt="Jollof Rice & Grilled Chicken" loading="lazy" />
+            <div class="card-badges">
+              <span class="badge badge-popular">⭐ Bestseller</span>
+              <span class="badge badge-spicy">🌶️ Spicy</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Jollof Rice & Grilled Chicken</h3>
+            <p>Classic smoky party jollof rice served with spiced grilled chicken and fried plantain</p>
+            <div class="card-footer">
+              <span class="price">₦3,800</span>
+              <button class="add-to-cart-btn" type="button">+ Add to Order</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card" data-tags="popular" data-name="Nigerian Fried Rice & Turkey" data-price="4000">
+          <div class="card-img-wrapper">
+            <img src="./images/Nigerian Fried Rice.jpeg" alt="Nigerian Fried Rice & Turkey" loading="lazy" />
+            <div class="card-badges">
+              <span class="badge badge-popular">⭐ Popular</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Nigerian Fried Rice & Turkey</h3>
+            <p>Stir-fried basmati rice with mixed vegetables, diced liver, and crispy peppered turkey</p>
+            <div class="card-footer">
+              <span class="price">₦4,000</span>
+              <button class="add-to-cart-btn" type="button">+ Add to Order</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card" data-tags="spicy popular" data-name="Efo Riro & Pounded Yam" data-price="4200">
+          <div class="card-img-wrapper">
+            <img src="./images/Efo riro.jpeg" alt="Efo Riro & Pounded Yam" loading="lazy" />
+            <div class="card-badges">
+              <span class="badge badge-spicy">🌶️ Spicy</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Efo Riro & Pounded Yam</h3>
+            <p>Rich Yoruba-style spinach and locust bean stew with assorted meats and smooth pounded yam</p>
+            <div class="card-footer">
+              <span class="price">₦4,200</span>
+              <button class="add-to-cart-btn" type="button">+ Add to Order</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card" data-tags="popular" data-name="Egusi Soup & Semovita" data-price="3900">
+          <div class="card-img-wrapper">
+            <img src="./images/Egusi.jpeg" alt="Egusi Soup & Semovita" loading="lazy" />
+            <div class="card-badges">
+              <span class="badge badge-popular">⭐ Popular</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Egusi Soup & Semovita</h3>
+            <p>Hearty melon seed soup cooked with bitterleaf, stockfish, and tender beef</p>
+            <div class="card-footer">
+              <span class="price">₦3,900</span>
+              <button class="add-to-cart-btn" type="button">+ Add to Order</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card" data-tags="spicy popular" data-name="Amala, Ewedu & Gbegiri" data-price="4100">
+          <div class="card-img-wrapper">
+            <img src="./images/Amala.jpeg" alt="Amala, Ewedu & Gbegiri" loading="lazy" />
+            <div class="card-badges">
+              <span class="badge badge-popular">⭐ Chef's Special</span>
+              <span class="badge badge-spicy">🌶️ Spicy</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Amala, Ewedu & Gbegiri</h3>
+            <p>Fluffy yam flour swallow topped with abula (bean & jute leaf soups) and assorted meats</p>
+            <div class="card-footer">
+              <span class="price">₦4,100</span>
+              <button class="add-to-cart-btn" type="button">+ Add to Order</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card" data-tags="spicy popular" data-name="Ofada Rice & Ayamase" data-price="4300">
+          <div class="card-img-wrapper">
+            <img src="./images/ofada rice and ayamase sauce.jpg" alt="Ofada Rice & Ayamase" loading="lazy" />
+            <div class="card-badges">
+              <span class="badge badge-popular">⭐ Chef's Special</span>
+              <span class="badge badge-spicy">🌶️ Spicy</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Ofada Rice & Ayamase</h3>
+            <p>Unpolished local heritage rice served with smoky green pepper designer stew, assorted meats, and boiled egg</p>
+            <div class="card-footer">
+              <span class="price">₦4,300</span>
+              <button class="add-to-cart-btn" type="button">+ Add to Order</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- DESSERTS -->
+    <section id="desserts" class="menu-section fade-section">
+      <h2>Desserts</h2>
+      <div class="menu-grid">
+        <article class="menu-card" data-tags="spicy vegan" data-name="Plantain Chips & Dip" data-price="1500">
+          <div class="card-img-wrapper">
+            <img src="./images/Plantain chips.jpeg" alt="Plantain Chips & Dip" loading="lazy" />
+            <div class="card-badges">
+              <span class="badge badge-vegan">🌱 Plant-Based</span>
+              <span class="badge badge-spicy">🌶️ Sweet & Spicy</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Plantain Chips & Dip</h3>
+            <p>Crispy golden plantain crisps served with our house honey-pepper glaze dip</p>
+            <div class="card-footer">
+              <span class="price">₦1,500</span>
+              <button class="add-to-cart-btn" type="button">+ Add to Order</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card" data-tags="popular" data-name="Coconut Cake" data-price="1800">
+          <div class="card-img-wrapper">
+            <img src="./images/Coconut Cake.jpeg" alt="Coconut Cake" loading="lazy" />
+            <div class="card-badges">
+              <span class="badge badge-popular">⭐ Popular</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Coconut Cake</h3>
+            <p>Moist, freshly baked coconut-infused sponge cake slice topped with toasted flakes</p>
+            <div class="card-footer">
+              <span class="price">₦1,800</span>
+              <button class="add-to-cart-btn" type="button">+ Add to Order</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card" data-tags="vegan" data-name="Zobo Jelly" data-price="1200">
+          <div class="card-img-wrapper">
+            <img src="./images/zobo jelly.png" alt="Zobo Jelly" loading="lazy" />
+            <div class="card-badges">
+              <span class="badge badge-vegan">🌱 Plant-Based</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Zobo Jelly</h3>
+            <p>Chilled hibiscus and pineapple-infused jelly dessert with a tangy finish</p>
+            <div class="card-footer">
+              <span class="price">₦1,200</span>
+              <button class="add-to-cart-btn" type="button">+ Add to Order</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- BEVERAGES -->
+    <section id="beverages" class="menu-section fade-section">
+      <h2>Beverages</h2>
+      <div class="menu-grid">
+        <article class="menu-card" data-tags="popular vegan" data-name="Chapman" data-price="1500">
+          <div class="card-img-wrapper">
+            <img src="./images/Chapman.jpeg" alt="Chapman" loading="lazy" />
+            <div class="card-badges">
+              <span class="badge badge-popular">⭐ Popular</span>
+              <span class="badge badge-vegan">🌱 Plant-Based</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Chapman</h3>
+            <p>Refreshing Nigerian fruity mocktail blended with aromatic bitters, cucumber, and citrus</p>
+            <div class="card-footer">
+              <span class="price">₦1,500</span>
+              <button class="add-to-cart-btn" type="button">+ Add to Order</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card" data-tags="vegan" data-name="Palm Wine" data-price="1800">
+          <div class="card-img-wrapper">
+            <img src="./images/Palmwine.jpeg" alt="Palm Wine" loading="lazy" />
+            <div class="card-badges">
+              <span class="badge badge-vegan">🌱 Natural</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Palm Wine</h3>
+            <p>Chilled, naturally sweet and lightly effervescent fresh palm sap served in a calabash</p>
+            <div class="card-footer">
+              <span class="price">₦1,800</span>
+              <button class="add-to-cart-btn" type="button">+ Add to Order</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card" data-tags="popular vegan" data-name="Zobo Drink" data-price="1200">
+          <div class="card-img-wrapper">
+            <img src="./images/Zobo drink.jpeg" alt="Zobo Drink" loading="lazy" />
+            <div class="card-badges">
+              <span class="badge badge-popular">⭐ Popular</span>
+              <span class="badge badge-vegan">🌱 Plant-Based</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Zobo Drink</h3>
+            <p>Ice-cold hibiscus flower tea brewed with fresh ginger, cloves, and sweet pineapple</p>
+            <div class="card-footer">
+              <span class="price">₦1,200</span>
+              <button class="add-to-cart-btn" type="button">+ Add to Order</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ORDER CART DRAWER -->
+  <div class="cart-overlay" id="cartOverlay" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Order Summary" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Your Order</h3>
+      <button class="cart-close" id="cartClose" aria-label="Close order drawer">&times;</button>
+    </div>
+
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty">Your order tray is empty. Select dishes from the menu to begin!</p>
+    </div>
+
+    <div class="cart-footer" id="cartFooter" hidden>
+      <div class="cart-note">
+        <label for="orderNote">Table Number or Delivery Note (optional):</label>
+        <input type="text" id="orderNote" placeholder="e.g., Table 4, extra spicy..." />
+      </div>
+      <div class="cart-total-row">
+        <span>Total</span>
+        <strong id="cartTotal">₦0</strong>
+      </div>
+      <div class="cart-actions">
+        <button class="btn btn-primary btn-full" id="checkoutBtn" type="button">Place Order</button>
+        <button class="btn btn-outline btn-full" id="clearCartBtn" type="button">Clear Tray</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">OBADEE <span>EATS</span></div>
+        <p>Celebrating the rich culinary heritage of Nigeria — one plate at a time.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Menu Sections</h4>
+        <ul>
+          <li><a href="#starters">Starters</a></li>
+          <li><a href="#main">Main Dishes</a></li>
+          <li><a href="#desserts">Desserts</a></li>
+          <li><a href="#beverages">Beverages</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Visit or Order</h4>
+        <p>📍 Victoria Island, Lagos, Nigeria</p>
+        <p>🕒 Mon – Sun: 9:00 AM – 10:00 PM</p>
+        <p>📞 +234 800 OBADEE EATS</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 OBADEE EATS. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
